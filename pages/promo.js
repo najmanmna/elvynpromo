@@ -2,6 +2,7 @@
 import React from "react";
 import { Playfair_Display } from "next/font/google";
 import SignupForm from "@/components/SignupForm";
+import Image from "next/image";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ export default function Promo() {
     >
       {/* 👜 Bag silhouettes */}
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none opacity-15">
-        <img
+        <Image
           src="/bag.jpg"
           alt="Bags Background"
           className="w-full h-full object-cover"
@@ -49,7 +50,7 @@ export default function Promo() {
         </h1>
 
         <p className="font-serif text-gray-700 text-base leading-relaxed mb-10">
-          We're all set to launch our Website very soon.. Subscribe us to claim{" "}
+          We&apos;re all set to launch our Website very soon.. Subscribe us to claim{" "}
           <span className="font-semibold">15% Special Discount</span> on our
           upcoming <span className="font-bold">Limited Vogue Bag Collection</span>{" "}
           and get notified with our stock updates, exclusive offers and many
