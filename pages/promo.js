@@ -19,7 +19,9 @@ export default function Promo() {
         <Image
           src="/bag.jpg"
           alt="Bags Background"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
         />
       </div>
 
@@ -50,11 +52,11 @@ export default function Promo() {
         </h1>
 
         <p className="font-serif text-gray-700 text-base leading-relaxed mb-10">
-          We&apos;re all set to launch our Website very soon.. Subscribe us to claim{" "}
-          <span className="font-semibold">15% Special Discount</span> on our
-          upcoming <span className="font-bold">Limited Vogue Bag Collection</span>{" "}
-          and get notified with our stock updates, exclusive offers and many
-          more.
+          We&apos;re all set to launch our Website very soon.. Subscribe us to
+          claim <span className="font-semibold">15% Special Discount</span> on
+          our upcoming{" "}
+          <span className="font-bold">Limited Vogue Bag Collection</span> and
+          get notified with our stock updates, exclusive offers and many more.
         </p>
 
         {/* Signup Form */}

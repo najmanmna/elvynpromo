@@ -4,10 +4,12 @@ import { useState } from "react";
 export default function SignupForm() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("loading");
+    setMessage("");
 
     try {
       const res = await fetch("/api/subscribe", {
@@ -16,14 +18,26 @@ export default function SignupForm() {
         body: JSON.stringify({ email }),
       });
 
+      const data = await res.json();
+
       if (res.ok) {
-        setStatus("success");
-        setEmail("");
+        if (data.message.includes("already subscribed")) {
+          setStatus("exists");
+          setMessage("✅ You are already subscribed with this email.");
+        } else {
+          setStatus("success");
+          setMessage(
+            "🎉 Thanks for subscribing! Avail your 15% discount by entering the same email at checkout when we launch."
+          );
+          setEmail("");
+        }
       } else {
         setStatus("error");
+        setMessage(data.message || "❌ Something went wrong. Please try again.");
       }
     } catch (err) {
       setStatus("error");
+      setMessage("❌ Network error. Please try again.");
     }
   };
 
@@ -38,6 +52,7 @@ export default function SignupForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
+          required
           className="px-4 py-3 border text-gray-700 border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400 w-full sm:w-72"
         />
         <button
@@ -49,20 +64,17 @@ export default function SignupForm() {
         </button>
       </form>
 
-      {/* ✅ Success Message */}
-      {status === "success" && (
-        <p className="mt-4 text-green-700 text-sm max-w-md text-center">
-          🎉 Thanks for subscribing! <br />
-          Avail your <span className="font-semibold">15% discount</span> by
-          entering the <span className="font-semibold">same email</span> at
-          checkout when we launch.
-        </p>
-      )}
-
-      {/* ❌ Error Message */}
-      {status === "error" && (
-        <p className="mt-4 text-red-600 text-sm text-center">
-          ❌ Something went wrong. Please try again.
+      {message && (
+        <p
+          className={`mt-4 text-sm max-w-md text-center ${
+            status === "success"
+              ? "text-green-700"
+              : status === "exists"
+              ? "text-blue-700"
+              : "text-red-600"
+          }`}
+        >
+          {message}
         </p>
       )}
     </div>
