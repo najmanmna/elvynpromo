@@ -6,10 +6,7 @@ export default function Home() {
       {/* Background gradient / smoke effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black opacity-90"></div>
 
-      {/* Decorative circles */}
-      <div className="absolute w-[600px] h-[600px] rounded-full bg-gradient-to-r from-pink-200/10 to-yellow-200/5 blur-3xl -top-40 -right-40"></div>
-      <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-r from-purple-200/10 to-pink-200/10 blur-3xl -bottom-40 -left-40"></div>
-
+     
       {/* Content */}
       <section className="relative z-10 text-center px-6">
         <h1 className="text-5xl md:text-6xl font-serif mb-6 tracking-wide">
