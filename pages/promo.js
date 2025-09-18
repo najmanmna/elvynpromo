@@ -12,7 +12,7 @@ const playfair = Playfair_Display({
 export default function Promo() {
   return (
     <main
-      className={`${playfair.variable} relative min-h-screen bg-[#f9f9f9] flex flex-col items-center justify-center px-6 py-12 text-center overflow-hidden font-serif`}
+      className={`${playfair.variable} relative min-h-screen bg-[#f9f9f9] flex flex-col items-center justify-center px-6 py-5 text-center overflow-hidden font-serif`}
     >
       {/* 👜 Bag silhouettes */}
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none opacity-15">

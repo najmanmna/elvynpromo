@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
+import Image from "next/image";
 
 export default function SignupForm() {
   const [email, setEmail] = useState("");
@@ -43,6 +45,7 @@ export default function SignupForm() {
 
   return (
     <div className="w-full flex flex-col items-center">
+      {/* ✅ Signup Form */}
       <form
         onSubmit={handleSubmit}
         className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
@@ -64,6 +67,7 @@ export default function SignupForm() {
         </button>
       </form>
 
+      {/* ✅ Messages */}
       {message && (
         <p
           className={`mt-4 text-sm max-w-md text-center ${
@@ -77,6 +81,37 @@ export default function SignupForm() {
           {message}
         </p>
       )}
+
+      {/* ✅ Social Icons */}
+      <div className="flex gap-6 mt-8">
+        <a
+          href="https://www.instagram.com/elvyn_official"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-pink-600 transition text-2xl"
+        >
+          <FaInstagram />
+        </a>
+        <a
+          href="https://www.facebook.com/share/1CK6tFGjwJ/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-blue-600 transition text-2xl"
+        >
+          <FaFacebook />
+        </a>
+      </div>
+
+      {/* ✅ Logo at bottom */}
+      <div className="mt-5">
+        <Image
+          src="/logo.png"
+          alt="Elvyn Logo"
+          width={150}
+          height={40}
+          className="mx-auto opacity-90 hover:opacity-100 transition"
+        />
+      </div>
     </div>
   );
 }
