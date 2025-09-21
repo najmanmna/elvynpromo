@@ -12,9 +12,9 @@ const client = createClient({
 const customerEmailTemplate = (email) => `
   <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #333; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
     <div style="text-align: center;">
-      <img src="https://elvynstore.com/logo.png" alt="Elvyn Store" style="width: 120px; margin-bottom: 20px;">
+      <img src="https://elvynstore.com/logo.png" alt="Elvyn" style="width: 120px; margin-bottom: 20px;">
     </div>
-    <h2 style="color: #2c3e50; text-align: center;">Welcome to Elvyn Store!</h2>
+    <h2 style="color: #2c3e50; text-align: center;">Welcome to Elvyn!</h2>
     <p>Hi there,</p>
     <p>Thank you for subscribing to our newsletter! 🎉</p>
     <p>You'll now be the first to know about new products, offers, and exclusive discounts.</p>
@@ -22,7 +22,7 @@ const customerEmailTemplate = (email) => `
     <div style="text-align: center; margin: 30px 0;">
       <a href="https://elvynstore.com" style="background-color: #ff6f61; color: white; text-decoration: none; padding: 12px 24px; border-radius: 4px; font-weight: bold;">Visit Store</a>
     </div>
-    <p style="color: #888; font-size: 12px; text-align: center;">Elvyn Store Team</p>
+    <p style="color: #888; font-size: 12px; text-align: center;">Team ELVYN</p>
   </div>
 `;
 
